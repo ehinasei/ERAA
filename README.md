@@ -1,2 +1,4 @@
 # ERAA
-Electricity Resource Adequacy Assessment (ERAA) requires climatological data to accurately capture electricity supply and demand. This repo takes 2010-2026 solar, wind, and temperature data from ERA5 and calculates capacity factors, as well as the relationship between electricity demand and temperature.
+
+The Stockholm Environment Institute (SEI) is conducting an Electricity Resource Adequacy Assessment (ERAA) for the Republic of Moldova. This assessment will be conducted primarily via the Low Emissions Analysis Platform (LEAP), but will utilize external scripting. The ERAA uses an hourly resolution to ensure that electricity supply meets or exceeds demand. Demand, as well as generation potential (supply) is a function of temperature, time of year, and location. Because of this, we will utilize hourly climatological data to accurately capture variation in electricity supply and demand. This repository downloads relevant weather data (temperature, solar irradiance, wind speeds) from ERA5 (5th generation ECMWF reanalysis) for Moldova. 
+
