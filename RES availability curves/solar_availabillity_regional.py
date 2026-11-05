@@ -21,7 +21,7 @@ Outputs (in OUT_DIR):
  
 Notes
   - time_utc is the ERA5 time; time_local is fixed UTC+2 (no daylight saving).
-  - Losses are applied (LOSS_FACTOR). Bias correction is NOT applied yet.
+  - Losses are applied (LOSS_FACTOR).
   - Night hours are 0. Sanity check: the daily peak should be around 12:00-13:00
     in the time_local column; if it is shifted, the radiation timing needs checking.
   - CF is relative to the panels' rated (DC) capacity. If LEAP capacity is in AC
