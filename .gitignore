@@ -4,7 +4,7 @@
 *.xlsx
 *.png
 cutouts/
-cf_output/
+cf_output*/
 # Python environments and caches
 .venv/
 __pycache__/
