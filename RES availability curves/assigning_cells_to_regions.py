@@ -1,6 +1,6 @@
 #UNIVERSAL SETTINGS
 EQUAL_AREA_CRS = "EPSG:3035"  
-LOCAL_TZ = "Etc/GMT-2"             # translates ERA5's UTC to Moldova's local time (UTC+2, no daylight saving)
+LOCAL_TZ = "Etc/GMT-2"     # translates ERA5's UTC to Moldova's local time (UTC+2, no daylight saving)
 MIN_OVERLAP = 0.0   
 
 #IMPORTS
@@ -91,7 +91,7 @@ def plot_mapping(cells, regions, mapping, path):
 def compute_year(year, make_cf, name, cutout_dir, out_dir, attrs):
     """Hourly CF for all grid cells of one year; saved as NetCDF"""
     source = os.path.join(cutout_dir, f"moldova_era5_{year}.nc") #filepath to read ERA5 data
-    output = os.path.join(out_dir, f"cf_wind_hourly_{year}.nc") #filepath to save hourly CF
+    output = os.path.join(out_dir, f"cf_{name}_hourly_{year}.nc") #filepath to save hourly CF
 
     #using atlite to translate wind speeds to CFs 
     cutout = atlite.Cutout(source) #creates cutout from ERA5 data
@@ -131,7 +131,7 @@ def run_regional(make_cf, name, years, cutout_dir, out_dir, regions_file, attrs=
                 cf = da.load()
             times = pd.DatetimeIndex(cf.time.values)
             local = times.tz_localize("UTC").tz_convert(LOCAL_TZ).strftime("%Y-%m-%d %H:%M")
-            out = os.path.join(out_dir, f"wind_cf_by_region_{year}.xlsx")
+            out = os.path.join(out_dir, f"{name}_cf_by_region_{year}.xlsx")
             with pd.ExcelWriter(out) as xw:
                 for reg, grp in mapping.groupby("region"): #for each region, get the cells that belong to it 
                     regional_cf = cf.sel(y=xr.DataArray(grp["y"].values, dims="cell"),

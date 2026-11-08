@@ -17,8 +17,8 @@ MIN_OVERLAP = 0.0
 PANEL = "CSi"                       # crystalline silicon, Huld (2010) model
 ORIENTATION = "latitude_optimal"    # fixed, south-facing, optimal tilt
 TRACKING = None                     # None = fixed; "horizontal" = single-axis
-LOSS_FACTOR = 0.97                  # soiling, wiring, downtime (inverter 0.9 is
-                                    # already applied inside atlite's CSi panel)
+LOSS_FACTOR = 0.97                  # soiling, wiring, downtime (inverter 0.9 is already applied inside atlite's CSi panel)
+                                    # 3% loss is same value used by PVWatts (https://aurorasolar.com/blog/understanding-pv-system-losses-part-2-wiring-connections-and-system-availability/)
 # --------------------------------------------------------------------------
  
  

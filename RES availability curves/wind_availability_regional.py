@@ -15,7 +15,7 @@ YEARS = range(2010, 2027)
 LOCAL_TZ = "Etc/GMT-2"                                 # fixed UTC+2
 MIN_OVERLAP = 0.0
  
-TURBINE = "Vestas_V112_3MW"
+TURBINE = "Vestas_V112_3MW" #moldova's wind turbines are primarily second-hand, medium-capacity horizontal-axis turbines)
 LOSS_FACTOR = 0.88                                     # wake, electrical, downtime
 # --------------------------------------------------------------------------
  
