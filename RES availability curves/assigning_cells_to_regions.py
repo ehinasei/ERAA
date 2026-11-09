@@ -96,7 +96,7 @@ def compute_year(year, make_cf, name, cutout_dir, out_dir, attrs):
     #using atlite to translate wind speeds to CFs 
     cutout = atlite.Cutout(source) #creates cutout from ERA5 data
     cf = make_cf(cutout)
-    cf.attrs.update(units="capacity factor (0-1)", time_zone="UTC", **attrs) #adds attributes to the CF data array
+    cf.attrs.update({"units": "capacity factor (0-1)", "time_zone": "UTC", **(attrs or {})}) #adds attributes; values in attrs (e.g. units) override the defaults
     cf.to_netcdf(output)
     print(f"{year}: hourly CF computed ({cf.sizes['time']} hours)")
     return output
